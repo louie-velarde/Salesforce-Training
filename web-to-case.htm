@@ -6,12 +6,13 @@
   <style>
      .case-form__styled {max-width: 360px;}
      .case-form__styled label {display: block; margin-top: 10px;}
-     .case-form__styled input[type="email"], .case-form__styled input[type="text"], .case-form__styled select, .case-form__styled textarea {border: 1px solid #ddd; border-radius: 4px; padding: 6px 10px; width: 100%;}
+     .case-form__styled input[type="email"], .case-form__styled input[type="text"], .case-form__styled select, .case-form__styled textarea {border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; padding: 6px 10px; width: 100%;}
      .case-form__styled input[type="submit"] {background: #333; color: white; border-radius: 4px; padding: 5px 16px; margin-top: 12px; font: inherit;}
   </style>
 </head>
 
 <body>
+  <h3>Salesforce Web to Case Testing Form</h3>
   <form class="case-form__styled" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DNS000009vUU3" method="POST">
     <input type=hidden name="orgid" value="00DNS000009vUU3">
     <input type=hidden name="retURL" value="https://www.duckduckgo.com/">
@@ -20,6 +21,11 @@
     <label for="phone">Phone</label><input id="phone" maxlength="40" name="phone" size="20" type="text"><br>
     <label for="subject">Subject*</label><input required id="subject" maxlength="80" name="subject" size="20" type="text"><br>
     <label for="description">Description*</label><textarea required id="description" name="description"></textarea><br>
+    <label for="priority">Priority</label><select id="priority" name="priority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select><br>
     <input type="submit" name="submit" value="Submit">
   </form>
 </body>
